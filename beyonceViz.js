@@ -1,7 +1,9 @@
 var paper;
-var canvasWidth = 300;
-var canvasHeight = 300;
+var img = document.getElementById('originalImage')
+var canvasWidth = img.width;
+var canvasHeight = img.height;
 var padding = 10;
+
 
 $(document).ready(function () {runProgram()});
 
@@ -13,7 +15,7 @@ function runProgram() {
 function drawCanvas() {
     for (i = 0; i < canvasWidth; i++) {
     	for (h = 0; h < canvasHeight; h++) {
-    		paper.circle(i, h, 1).attr({"stroke":"red"})
+    		paper.circle(i, h, 1).attr("stroke"="red")
     	}
     }
 }
