@@ -11,5 +11,9 @@ function runProgram() {
 }  
 
 function drawCanvas() {
-    paper.circle(150, 150, 10)
+    for (i = 0; i < canvasWidth; i++) {
+    	for (h = 0; h < canvasHeight; h++) {
+    		paper.circle(i, h, 1)
+    	}
+    }
 }
