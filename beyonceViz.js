@@ -8,8 +8,8 @@ function runProgram() {
     img = document.getElementById('originalImage')
     c = document.getElementById("myCanvas");
     
-    canvasWidth = img.clientWidth;
-    canvasHeight = img.clientHeight;
+    canvasWidth = 600;
+    canvasHeight = 600;
     ctx=c.getContext("2d");
 
     imgData=ctx.getImageData(0,0,canvasWidth,canvasHeight);
