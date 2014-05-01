@@ -7,7 +7,7 @@ $(document).ready(function () {runProgram()});
 
 function runProgram() {
     paper = new Raphael(document.getElementById('canvas_container'), canvasWidth, canvasHeight);  
-    {drawCanvas()});       
+    {drawCanvas()};       
 }  
 
 function drawCanvas() {
