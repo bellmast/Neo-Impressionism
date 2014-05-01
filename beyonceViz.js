@@ -21,7 +21,7 @@ function runProgram() {
         imgData.data[i+2]=255-imgData.data[i+2];
         imgData.data[i+3]=255;
         }
-    ctx.putImageData(imgData,0,canvasHeight);
+    newImg = ctx.putImageData(imgData,canvasWidth,canvasHeight);
 
     paper = new Raphael(canvasWidth, 0, canvasWidth, canvasHeight);  
     {drawCanvas()};       
