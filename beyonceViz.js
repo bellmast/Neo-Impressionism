@@ -8,7 +8,7 @@ function runProgram() {
     img = document.getElementById('originalImage')
     canvasWidth = img.clientWidth;
     canvasHeight = img.clientHeight;
-    paper = new Raphael(canvasWidth, canvasHeight, canvasWidth, canvasHeight);  
+    paper = new Raphael(canvasWidth, 0, canvasWidth, canvasHeight);  
     {drawCanvas()};       
 }  
 
