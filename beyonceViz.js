@@ -13,8 +13,8 @@ function runProgram() {
 }  
 
 function drawCanvas() {
-    for (i = canvasWidth; i < canvasWidth*2; i++) {
-    	for (h = canvasHeight; h < canvasHeight*2; h++) {
+    for (i = 10; i < canvasWidth-10; i++) {
+    	for (h = 10; h < canvasHeight-10; h++) {
     		paper.circle(i, h, 1).attr("stroke"="red")
     	}
     }
