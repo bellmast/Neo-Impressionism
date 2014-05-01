@@ -5,9 +5,9 @@ var padding = 10;
 $(document).ready(function () {runProgram()});
 
 function runProgram() {
-    var img = document.getElementById('originalImage')
-    var canvasWidth = img.clientWidth;
-    var canvasHeight = img.clientHeight;
+    img = document.getElementById('originalImage')
+    canvasWidth = img.clientWidth;
+    canvasHeight = img.clientHeight;
     paper = new Raphael(document.getElementById('canvas_container'), canvasWidth, canvasHeight);  
     {drawCanvas()};       
 }  
