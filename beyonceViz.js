@@ -1,6 +1,6 @@
 var paper;
-var canvasWidth = 800;
-var canvasHeight = 700;
+var canvasWidth = 300;
+var canvasHeight = 300;
 var padding = 10;
 
 $(document).ready(function () {runProgram()});
