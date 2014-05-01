@@ -10,9 +10,9 @@ function runProgram() {
     
     canvasWidth = img.clientWidth;
     canvasHeight = img.clientHeight;
-    var ctx=c.getContext("2d");
+    ctx=c.getContext("2d");
 
-    var imgData=ctx.getImageData(0,0,canvasWidth,canvasHeight);
+    imgData=ctx.getImageData(0,0,canvasWidth,canvasHeight);
       // invert colors
     for (var i=0;i<imgData.data.length;i+=4)
         {
