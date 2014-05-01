@@ -6,6 +6,8 @@ $(document).ready(function () {runProgram()});
 
 function runProgram() {
     img = document.getElementById('originalImage')
+    c = document.getElementById("myCanvas");
+    c.attr({width:600; height; 600})
     canvasWidth = img.clientWidth;
     canvasHeight = img.clientHeight;
     paper = new Raphael(canvasWidth, 0, canvasWidth, canvasHeight);  
@@ -14,7 +16,7 @@ function runProgram() {
 
 function drawCanvas() {
   
-  var c = document.getElementById("myCanvas");
+
   var ctx=c.getContext("2d");
   ctx.drawImage(img,0,0);
   var imgData=ctx.getImageData(0,0,canvasWidth,canvasHeight);
