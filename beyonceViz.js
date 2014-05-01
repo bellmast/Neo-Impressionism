@@ -17,7 +17,7 @@ function drawCanvas() {
   
 
   var ctx=c.getContext("2d");
-  ctx.drawImage(img,0,0);
+
   var imgData=ctx.getImageData(0,0,canvasWidth,canvasHeight);
   // invert colors
   for (var i=0;i<imgData.data.length;i+=4)
