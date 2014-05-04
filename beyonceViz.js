@@ -23,10 +23,12 @@ function drawCanvas() {
     brushSet = paper.set()
     heightMod = 6
     widthMod = 12
+    widthTracker = 0
+    heightTracker = 0
     for (h = 0; h < 50; h+=heightMod) {
     	for (i = 0; i < 50; i+=widthMod) {
             
-            imgData=ctx.getImageData(0,0,widthMod,heightMod);
+            imgData=ctx.getImageData(widthTracker, heightTracker, widthMod, heightMod);
 
             redCount = 0
             greenCount = 0
@@ -49,9 +51,11 @@ function drawCanvas() {
             brushSet.push(paper.rect(i, h, widthMod, heightMod).attr({fill:"rgba(avgRed, avgGreen, avgBlue, avgAlpha)", stroke:"none"}))
 
             //
-
+            widthTracker += widthMod
     		widthMod = Math.floor(Math.random()*4)+2
+            
     	}
+    heightTracker += heightMod
     heightMod = Math.floor(Math.random()*8)+4
     }
 }
