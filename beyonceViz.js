@@ -62,6 +62,7 @@ function drawCanvas() {
     		widthMod = Math.floor(Math.random()*4)+2
             
     	}
+    widthTracker = 0
     heightTracker += 12
     heightMod = Math.floor(Math.random()*8)+4
     }
