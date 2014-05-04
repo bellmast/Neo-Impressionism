@@ -20,7 +20,7 @@ function runProgram() {
 
 function drawCanvas() {
   
-
+    brushSet = paper.set()
     heightMod = 6
     widthMod = 12
     for (h = 0; h < 50; h+=heightMod) {
@@ -46,7 +46,7 @@ function drawCanvas() {
             avgBlue = blueCount/count
             avgAlpha = alphaCount/count
 
-            paper.rect(canvasWidth+i, h, widthMod, heightMod).attr({fill:"rgba(avgRed, avgGreen, avgBlue, avgAlpha)", stroke:"none"})
+            brushSet.push(paper.rect(canvasWidth+i, h, widthMod, heightMod).attr({fill:"rgba(avgRed, avgGreen, avgBlue, avgAlpha)", stroke:"none"}))
 
 
     		widthMod = Math.floor(Math.random()*4)+2
