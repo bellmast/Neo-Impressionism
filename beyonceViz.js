@@ -11,6 +11,7 @@ function runProgram() {
     canvasWidth = 600;
     canvasHeight = 600;
     ctx=c.getContext("2d");
+    ctx.drawImage(img, 0, 0)
 
     
 
