@@ -5,7 +5,7 @@ var padding = 10;
 $(document).ready(function () {runProgram()});
 
 function runProgram() {
-    document.getelementById("originalImage").onload = function() {
+    document.getElementById("originalImage").onload = function() {
         canvas = document.getElementById("myCanvas");
         context = canvas.getContext("2d");
         img = document.getElementById('originalImage');
