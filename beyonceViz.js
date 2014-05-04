@@ -54,8 +54,8 @@ function drawCanvas() {
             avgGreen = greenCount/count
             avgBlue = blueCount/count
             avgAlpha = alphaCount/count
-
-            brushSet.push(paper.rect(i, h, widthMod, heightMod).attr({fill:"rgba("+avgRed+", "+avgGreen+", "+avgBlue+", "+avgAlpha")", stroke:"none"}))
+            filler = "rgba("+avgRed+", "+avgGreen+", "+avgBlue+", "+avgAlpha+")"
+            brushSet.push(paper.rect(i, h, widthMod, heightMod).attr({fill:filler, stroke:"none"}))
 
             //
             widthTracker += widthMod
