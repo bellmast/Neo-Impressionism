@@ -20,7 +20,7 @@ function runProgram() {
 
     
 
-    paper = new Raphael(canvasWidth, 0, canvasWidth, canvasHeight);  
+    paper = new Raphael(0, canvasHeight, canvasWidth, canvasHeight);  
     {drawCanvas()};       
 }  
 
@@ -34,7 +34,7 @@ function drawCanvas() {
     for (h = 0; h < 50; h+=heightMod) {
     	for (i = 0; i < 50; i+=widthMod) {
             
-            imgData=ctx.getImageData(widthTracker, heightTracker, widthMod, heightMod);
+            imgData=context.getImageData(widthTracker, heightTracker, widthMod, heightMod);
 
             redCount = 0
             greenCount = 0
