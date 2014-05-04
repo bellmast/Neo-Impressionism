@@ -46,9 +46,9 @@ function drawCanvas() {
             avgBlue = blueCount/count
             avgAlpha = alphaCount/count
 
-            brushSet.push(paper.rect(i, h, widthMod, heightMod).attr({fill:"red"}))
+            brushSet.push(paper.rect(i, h, widthMod, heightMod).attr({fill:"rgba(avgRed, avgGreen, avgBlue, avgAlpha)", stroke:"none"}))
 
-            //"rgba(avgRed, avgGreen, avgBlue, avgAlpha)", stroke:"none"
+            //
 
     		widthMod = Math.floor(Math.random()*4)+2
     	}
