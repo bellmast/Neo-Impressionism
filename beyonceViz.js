@@ -12,16 +12,7 @@ function runProgram() {
     canvasHeight = 600;
     ctx=c.getContext("2d");
 
-    imgData=ctx.getImageData(0,0,canvasWidth,canvasHeight);
-      // invert colors
-    for (var i=0;i<imgData.data.length;i+=4)
-        {
-        imgData.data[i]=255-imgData.data[i];
-        imgData.data[i+1]=255-imgData.data[i+1];
-        imgData.data[i+2]=255-imgData.data[i+2];
-        imgData.data[i+3]=255;
-        }
-    newImg = ctx.putImageData(imgData,canvasWidth,canvasHeight);
+    
 
     paper = new Raphael(canvasWidth, 0, canvasWidth, canvasHeight);  
     {drawCanvas()};       
@@ -30,10 +21,36 @@ function runProgram() {
 function drawCanvas() {
   
 
+    heightMod = 6
+    widthMod = 12
+    for (h = 0; h < 50; h+=heightMod) {
+    	for (i = 0; i < 50; i+=widthMod) {
+            
+            imgData=ctx.getImageData(0,0,widthMod,heightMod);
 
-    for (i = 0; i < canvasWidth; i++) {
-    	for (h = 0; h < canvasHeight; h++) {
-    		
+            redCount = 0
+            greenCount = 0
+            blueCount = 0
+            alphaCount = 0
+            count = 0
+
+            for (k = 0; k < imgData.data.length; k += 4) {
+                redCount += imgData[k]
+                greenCount += imgData[k+1]
+                blueCount += imgData[k+2]
+                alphaCount += imgData[k+3]
+                count += 1
+            }
+            avgRed = redcount/count
+            avgGreen = greenCount/count
+            avgBlue = blueCount/count
+            avgAlpha = alphaCount/count
+
+            paper.rect(canvasWidth+i, h, widthMod, heightMod).attr({fill:"rgba(avgRed, avgGreen, avgBlue, avgAlpha)", stroke:none})
+
+
+    		widthMod = Math.floor(Math.random()*4)+2
     	}
+    heightMod = Math.floor(Math.random()*8)+4
     }
 }
