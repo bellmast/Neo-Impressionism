@@ -16,7 +16,7 @@ function runProgram() {
 
         
 
-        paper = new Raphael(0, canvasHeight, canvasWidth, canvasHeight);  
+        paper = new Raphael(10, canvasHeight+10, canvasWidth, canvasHeight);  
         {drawCanvas()};       
     }
     
@@ -55,7 +55,7 @@ function drawCanvas() {
             avgBlue = blueCount/count
             avgAlpha = alphaCount/count
 
-            brushSet.push(paper.rect(i, h, widthMod, heightMod).attr({fill:"rgba(avgRed, avgGreen, avgBlue, avgAlpha)", stroke:"none"}))
+            brushSet.push(paper.rect(i, h, widthMod, heightMod).attr({fill:"rgba("+avgRed+", "+avgGreen+", "+avgBlue+", "+avgAlpha")", stroke:"none"}))
 
             //
             widthTracker += widthMod
