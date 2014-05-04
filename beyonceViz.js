@@ -41,7 +41,7 @@ function drawCanvas() {
                 alphaCount += imgData[k+3]
                 count += 1
             }
-            avgRed = redcount/count
+            avgRed = redCount/count
             avgGreen = greenCount/count
             avgBlue = blueCount/count
             avgAlpha = alphaCount/count
