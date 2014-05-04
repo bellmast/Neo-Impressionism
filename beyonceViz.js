@@ -32,10 +32,10 @@ function drawCanvas() {
     widthMod = 12
     widthTracker = 0
     heightTracker = 0
-    for (h = 0; h < 300; h+=heightMod) {
-    	for (i = 0; i < 300; i+=widthMod) {
+    for (h = 0; h < 300; h+=12) {
+    	for (i = 0; i < 300; i+=6) {
             
-            imgData=context.getImageData(widthTracker, heightTracker, widthMod, heightMod);
+            imgData=context.getImageData(widthTracker, heightTracker, 6, 12);
 
             redCount = 0
             greenCount = 0
@@ -55,14 +55,14 @@ function drawCanvas() {
             avgBlue = blueCount/count
             avgAlpha = alphaCount/count
             filler = "rgba("+avgRed+", "+avgGreen+", "+avgBlue+", "+avgAlpha+")"
-            brushSet.push(paper.rect(i, h, widthMod, heightMod).attr({fill:filler, stroke:"none"}))
+            brushSet.push(paper.rect(i, h, 6, 12).attr({fill:filler, stroke:"none"}))
 
             //
-            widthTracker += widthMod
+            widthTracker += 6
     		widthMod = Math.floor(Math.random()*4)+2
             
     	}
-    heightTracker += heightMod
+    heightTracker += 12
     heightMod = Math.floor(Math.random()*8)+4
     }
 }
