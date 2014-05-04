@@ -35,10 +35,10 @@ function drawCanvas() {
             count = 0
 
             for (k = 0; k < imgData.data.length; k += 4) {
-                redCount += imgData[k]
-                greenCount += imgData[k+1]
-                blueCount += imgData[k+2]
-                alphaCount += imgData[k+3]
+                redCount += imgData.data[k]
+                greenCount += imgData.data[k+1]
+                blueCount += imgData.data[k+2]
+                alphaCount += imgData.data[k+3]
                 count += 1
             }
             avgRed = redCount/count
