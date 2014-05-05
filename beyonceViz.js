@@ -32,8 +32,8 @@ function drawCanvas() {
     widthMod = 12
     widthTracker = 0
     heightTracker = 0
-    for (h = 0; h < 150; h+=6) {
-    	for (i = 0; i < 150; i+=12) {
+    for (h = 0; h < 100; h+=6) {
+    	for (i = 0; i < 100; i+=12) {
             
             imgData=context.getImageData(widthTracker, heightTracker, 12, 6);
 
