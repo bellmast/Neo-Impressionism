@@ -33,9 +33,9 @@ function drawCanvas() {
     widthTracker = 0
     heightTracker = 0
     for (h = 0; h < canvasHeight; h+=12) {
-    	for (i = 0; i < canvasWidth; i+=12) {
+    	for (i = 0; i < canvasWidth; i+=6) {
             
-            imgData=context.getImageData(widthTracker, heightTracker, 12, 12);
+            imgData=context.getImageData(widthTracker, heightTracker, 6, 12);
 
             redCount = 0
             greenCount = 0
@@ -54,24 +54,13 @@ function drawCanvas() {
             avgGreen = greenCount/count
             avgBlue = blueCount/count
             avgAlpha = alphaCount/count
-
-            rPrime = avgRed/255
-            gPrime = avgGreen/255
-            bPrime = avgBlue/255
-
-            key = 1-Math.max(rPrime, gPrime, bPrime)
-            cyan = (1-rPrime-key) / (1-key)
-            magenta = (1-gPrime-key) / (1-key)
-            yellow = (1-bPrime-key) / (1-key)
-
-            filler = "rgba("+avgRed+", "+avgGreen+", "+avgBlue+", "+255+")"
-            fillerRed = "rgba("+avgRed+", "+0+", "+0+", "+255+")"
-            fillerGreen = "rgba("+0+", "+avgGreen+", "+0+", "+255+")"
-            fillerBlue = "rgba("+0+", "+0+", "+avgBlue+", "+255+")"
-            brushSet.push(paper.rect(i, h, 3, 12).attr({fill:key, stroke:"none"}))
-            brushSet.push(paper.rect(i+3, h, 3, 12).attr({fill:cyan, stroke:"none"}))
-            brushSet.push(paper.rect(i+6, h, 3, 12).attr({fill:magenta, stroke:"none"}))
-            brushSet.push(paper.rect(i+9, h, 3, 12).attr({fill:yellow, stroke:"none"}))
+            filler = "rgba("+avgRed+", "+avgGreen+", "+avgBlue+", "+avgAlpha+")"
+            fillerRed = "rgba("+avgRed+", "+0+", "+0+", "+avgAlpha+")"
+            fillerGreen = "rgba("+0+", "+avgGreen+", "+0+", "+avgAlpha+")"
+            fillerBlue = "rgba("+0+", "+0+", "+avgBlue+", "+avgAlpha+")"
+            brushSet.push(paper.rect(i-2, h, 2, 12).attr({fill:fillerRed, stroke:"none"}))
+            brushSet.push(paper.rect(i, h, 2, 12).attr({fill:fillerGreen, stroke:"none"}))
+            brushSet.push(paper.rect(i+2, h, 2, 12).attr({fill:fillerBlue, stroke:"none"}))
             //brushSet.push(paper.rect(i, h, 6, 12).attr({fill:filler, stroke:"none"}))
 
             //
