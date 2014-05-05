@@ -54,10 +54,10 @@ function drawCanvas() {
             avgGreen = greenCount/count
             avgBlue = blueCount/count
             avgAlpha = alphaCount/count
-            filler = "rgba("+avgRed+", "+avgGreen+", "+avgBlue+", "+avgAlpha+")"
-            fillerRed = "rgba("+avgRed+", "+0+", "+0+", "+avgAlpha+")"
-            fillerGreen = "rgba("+0+", "+avgGreen+", "+0+", "+avgAlpha+")"
-            fillerBlue = "rgba("+0+", "+0+", "+avgBlue+", "+avgAlpha+")"
+            filler = "rgba("+avgRed+", "+avgGreen+", "+avgBlue+", "+255+")"
+            fillerRed = "rgba("+avgRed+", "+0+", "+0+", "+255+")"
+            fillerGreen = "rgba("+0+", "+avgGreen+", "+0+", "+255+")"
+            fillerBlue = "rgba("+0+", "+0+", "+avgBlue+", "+255+")"
             brushSet.push(paper.rect(i-2, h, 2, 12).attr({fill:fillerRed, stroke:"none"}))
             brushSet.push(paper.rect(i, h, 2, 12).attr({fill:fillerGreen, stroke:"none"}))
             brushSet.push(paper.rect(i+2, h, 2, 12).attr({fill:fillerBlue, stroke:"none"}))
