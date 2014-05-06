@@ -21,6 +21,7 @@ function runProgram() {
         paper3 = new Raphael(5, canvasHeight+10, canvasWidth, canvasHeight);
         paper4 = new Raphael(5+canvasWidth+2, canvasHeight+10, canvasWidth, canvasHeight)
         paper5 = new Raphael(5+canvasWidth+2+canvasWidth+2, canvasHeight+10, canvasWidth, canvasHeight)
+        paper6 = new Raphael(5, canvasHeight+10+canvasHeight+2, canvasWidth, canvasHeight)
         {drawCanvas()};       
     }
     
@@ -30,7 +31,7 @@ function runProgram() {
 }  
 
 function drawCanvas() {
-  
+    glowSet = paper6.seT()
     heightMod = 6
     widthMod = 12
     widthTracker = 0
@@ -105,7 +106,9 @@ function drawCanvas() {
             paper3.rect(i, h, 6, 12).attr({fill:filler, stroke:"none"})
             paper4.rect(i, h, 6, 12).attr({fill:filler2, stroke:"none"})
             paper5.circle(i+6, h+6, 3).attr({fill:filler, stroke:"none"})
-            paper5.circle(i+6, h+12, 3).attr({fill:fillerComp, stroke:"none"})
+            paper5.circle(i+6, h+12, 3).attr({fill:filler, stroke:"none"})
+            paper6.circle(i+6, h+6, 3).attr({fill:filler, stroke:"none"})
+            paper6.circle(i+6, h+12, 3).attr({fill:filler, stroke:"none"})
 
 
             //
@@ -117,6 +120,7 @@ function drawCanvas() {
     heightTracker += 12
     heightMod = Math.floor(Math.random()*8)+4
     }
+    glowSet.glow({width:1, color:fillerComp})
 }
 
 function HueShift(h,s) { 
