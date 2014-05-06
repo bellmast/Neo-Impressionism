@@ -16,9 +16,9 @@ function runProgram() {
 
         
 
-        paper1 = new Raphael(canvasWidth, 0, canvasWidth, canvasHeight);
-        paper2 = new Raphael(canvasWidth+canvasWidth, 0, canvasWidth, canvasHeight)
-        paper3 = new Raphael(0, canvasHeight, canvasWidth, canvasHeight);
+        paper1 = new Raphael(canvasWidth+10, 10, canvasWidth, canvasHeight);
+        paper2 = new Raphael(canvasWidth+10+canvasWidth+10, 10, canvasWidth, canvasHeight)
+        paper3 = new Raphael(10, canvasHeight+10, canvasWidth, canvasHeight);
         {drawCanvas()};       
     }
     
