@@ -76,11 +76,11 @@ function drawCanvas() {
                 newS += floorAdd2
             }
             if (newL2 < 25) {
-                floorAdd3 = 25 - newL
+                floorAdd3 = 25 - newL2
                 newL2 += floorAdd3
             }
             if (newS2 < 25) {
-                floorAdd4 = 25 - newS
+                floorAdd4 = 25 - newS2
                 newS2 += floorAdd4
             }
             filler = new HSLColour(newH, newS, newL)
