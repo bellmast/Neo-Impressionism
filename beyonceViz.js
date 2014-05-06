@@ -84,6 +84,9 @@ function drawCanvas() {
             paper2.rect(i, h, 2, 12).attr({fill:fillerGreen, stroke:"none"})
             paper2.rect(i+2, h, 2, 12).attr({fill:fillerBlue, stroke:"none"})
             paper3.rect(i, h, 6, 12).attr({fill:filler, stroke:"none"})
+            paper4.rect(i-2, h, 2, 12).attr({fill:rgb.r, stroke:"none"})
+            paper4.rect(i, h, 2, 12).attr({fill:rgb.g, stroke:"none"})
+            paper4.rect(i+2, h, 2, 12).attr({fill:rgb.b, stroke:"none"})
 
             //
             widthTracker += 6
