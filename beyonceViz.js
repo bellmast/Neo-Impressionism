@@ -33,7 +33,7 @@ function drawCanvas() {
     widthTracker = 0
     heightTracker = 0
     for (h = 0; h < canvasHeight; h+=12) {
-    	for (i = 0; i < canvasWidth; i+=6) {
+        for (i = 0; i < canvasWidth; i+=6) {
             
             imgData=context.getImageData(widthTracker, heightTracker, 6, 12);
 
@@ -59,7 +59,18 @@ function drawCanvas() {
             
 
             hsl = filler.getHSL()
-            filler = new HSLColour(hsl.h, hsl.s, hsl.l)
+            newH = hsl.h
+            newS = hsl.s
+            newL = hsl.l
+            if (newL < 50) {
+                floorAdd = 50 - newL
+                newL += floorAdd
+            }
+            if (newS < 75) {
+                floorAdd2 = 75 - newS
+                newS += floorAdd2
+            }
+            filler = new HSLColour(newH, newS, newL)
             rgb = filler.getRGB()
             filler = "rgb("+rgb.r+", "+rgb.g+", "+rgb.b+")"
             fillerRed = "rgba("+avgRed+", "+0+", "+0+", "+avgAlpha+")"
@@ -72,9 +83,9 @@ function drawCanvas() {
 
             //
             widthTracker += 6
-    		widthMod = Math.floor(Math.random()*4)+2
+            widthMod = Math.floor(Math.random()*4)+2
             
-    	}
+        }
     widthTracker = 0
     heightTracker += 12
     heightMod = Math.floor(Math.random()*8)+4
