@@ -29,7 +29,6 @@ function runProgram() {
 
 function drawCanvas() {
   
-    brushSet = paper.set()
     heightMod = 6
     widthMod = 12
     widthTracker = 0
@@ -78,10 +77,10 @@ function drawCanvas() {
             fillerRed = "rgba("+avgRed+", "+0+", "+0+", "+avgAlpha+")"
             fillerGreen = "rgba("+0+", "+avgGreen+", "+0+", "+avgAlpha+")"
             fillerBlue = "rgba("+0+", "+0+", "+avgBlue+", "+avgAlpha+")"
-            //brushSet.push(paper.rect(i-2, h, 2, 12).attr({fill:fillerRed, stroke:"none"}))
-            //brushSet.push(paper.rect(i, h, 2, 12).attr({fill:fillerGreen, stroke:"none"}))
-            //brushSet.push(paper.rect(i+2, h, 2, 12).attr({fill:fillerBlue, stroke:"none"}))
-            brushSet.push(paper3.rect(i, h, 6, 12).attr({fill:filler, stroke:"none"}))
+            //paper.rect(i-2, h, 2, 12).attr({fill:fillerRed, stroke:"none"})
+            //paper.rect(i, h, 2, 12).attr({fill:fillerGreen, stroke:"none"})
+            //paper.rect(i+2, h, 2, 12).attr({fill:fillerBlue, stroke:"none"})
+            paper3.rect(i, h, 6, 12).attr({fill:filler, stroke:"none"})
 
             //
             widthTracker += 6
