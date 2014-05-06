@@ -76,7 +76,7 @@ function drawCanvas() {
     }
 }
 
-function rgb2hsl(r, g, b){
+function rgbToHsl(r, g, b){
     var r1 = r / 255;
     var g1 = g / 255;
     var b1 = b / 255;
