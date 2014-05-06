@@ -20,6 +20,7 @@ function runProgram() {
         paper2 = new Raphael(canvasWidth+10+canvasWidth+2, 7, canvasWidth, canvasHeight)
         paper3 = new Raphael(5, canvasHeight+10, canvasWidth, canvasHeight);
         paper4 = new Raphael(5+canvasWidth+2, canvasHeight+10, canvasWidth, canvasHeight)
+        paper5 = new Raphael(5+canvasWidth+2+canvasWidth+2, canvasHeight+10, canvasWidth, canvasHeight)
         {drawCanvas()};       
     }
     
@@ -99,6 +100,8 @@ function drawCanvas() {
             paper2.rect(i+2, h, 2, 12).attr({fill:fillerBlue, stroke:"none"})
             paper3.rect(i, h, 6, 12).attr({fill:filler, stroke:"none"})
             paper4.rect(i, h, 6, 12).attr({fill:filler2, stroke:"none"})
+            paper5.circle(i+3, h, 3).attr({fill:filler, stroke:"none"})
+            paper5.circle(i+3, h+3, 3).attr({fill:filler, stroke:"none"})
 
             //
             widthTracker += 6
