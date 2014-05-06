@@ -31,7 +31,7 @@ function runProgram() {
 }  
 
 function drawCanvas() {
-    glowSet = paper6.set()
+
     heightMod = 6
     widthMod = 12
     widthTracker = 0
@@ -107,8 +107,8 @@ function drawCanvas() {
             paper4.rect(i, h, 6, 12).attr({fill:filler2, stroke:"none"})
             paper5.circle(i+6, h+6, 3).attr({fill:filler, stroke:"none"})
             paper5.circle(i+6, h+12, 3).attr({fill:filler, stroke:"none"})
-            glowSet.push(paper6.circle(i+6, h+6, 3).attr({fill:filler, stroke:"none"}))
-            glowSet.push(paper6.circle(i+6, h+12, 3).attr({fill:filler, stroke:"none"}))
+            paper6.circle(i+6, h+6, 3).attr({fill:filler, stroke:"none"})).glow({width:1, color:fillerComp})
+            paper6.circle(i+6, h+12, 3).attr({fill:filler, stroke:"none"})).glow({width:1, color:fillerComp})
 
 
             //
@@ -120,7 +120,7 @@ function drawCanvas() {
     heightTracker += 12
     heightMod = Math.floor(Math.random()*8)+4
     }
-    glowSet.glow({width:1, color:fillerComp})
+
 }
 
 function HueShift(h,s) { 
