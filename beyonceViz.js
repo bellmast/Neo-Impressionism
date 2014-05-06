@@ -76,24 +76,41 @@ function drawCanvas() {
     }
 }
 
-function rgbToHsl(r, g, b){
-    r /= 255, g /= 255, b /= 255;
-    var max = Math.max(r, g, b), min = Math.min(r, g, b);
-    var h, s, l = (max + min) / 2;
-
-    if(max == min){
-        h = s = 0; // achromatic
-    }else{
-        var d = max - min;
-        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-        switch(max){
-            case r: h = (g - b) / d + (g < b ? 6 : 0); break;
-            case g: h = (b - r) / d + 2; break;
-            case b: h = (r - g) / d + 4; break;
+function rgb2hsl(r, g, b){
+    var r1 = r / 255;
+    var g1 = g / 255;
+    var b1 = b / 255;
+ 
+    var maxColor = Math.max(r1,g1,b1);
+    var minColor = Math.min(r1,g1,b1);
+    //Calculate L:
+    var L = (maxColor + minColor) / 2 ;
+    var S = 0;
+    var H = 0;
+    if(maxColor != minColor){
+        //Calculate S:
+        if(L < 0.5){
+            S = (maxColor - minColor) / (maxColor + minColor);
+        }else{
+            S = (maxColor - minColor) / (2.0 - maxColor - minColor);
         }
-        h /= 6;
+        //Calculate H:
+        if(r1 == maxColor){
+            H = (g1-b1) / (maxColor - minColor);
+        }else if(g1 == maxColor){
+            H = 2.0 + (b1 - r1) / (maxColor - minColor);
+        }else{
+            H = 4.0 + (r1 - g1) / (maxColor - minColor);
+        }
     }
-
-    return [h, s, l];
+ 
+    L = L * 100;
+    S = S * 100;
+    H = H * 60;
+    if(H<0){
+        H += 360;
+    }
+    var result = [H, S, L];
+    return result;
 }
 
