@@ -31,7 +31,7 @@ function runProgram() {
 }  
 
 function drawCanvas() {
-    glowSet = paper6.seT()
+    glowSet = paper6.set()
     heightMod = 6
     widthMod = 12
     widthTracker = 0
