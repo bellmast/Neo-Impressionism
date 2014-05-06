@@ -58,7 +58,7 @@ function drawCanvas() {
             filler = new RGBColour(avgRed, avgGreen, avgBlue)
             
 
-            hsl = getHSL(filler)
+            hsl = filler.getHSL()
             filler = "hsl("+hsl.h+", "+hsl.s+"%, "+hsl.l+"%)"
             fillerRed = "rgba("+avgRed+", "+0+", "+0+", "+avgAlpha+")"
             fillerGreen = "rgba("+0+", "+avgGreen+", "+0+", "+avgAlpha+")"
