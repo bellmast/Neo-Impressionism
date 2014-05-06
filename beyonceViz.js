@@ -64,6 +64,9 @@ function drawCanvas() {
             newH = hsl.h
             newS = hsl.s
             newL = hsl.l
+            newH2 = hsl.h
+            newS2 = hsl.s
+            newL2 = hsl.l
             if (newL < 50) {
                 floorAdd = 50 - newL
                 newL += floorAdd
@@ -72,11 +75,11 @@ function drawCanvas() {
                 floorAdd2 = 75 - newS
                 newS += floorAdd2
             }
-            if (newL < 25) {
+            if (newL2 < 25) {
                 floorAdd3 = 25 - newL
                 newL2 += floorAdd3
             }
-            if (newS < 25) {
+            if (newS2 < 25) {
                 floorAdd4 = 25 - newS
                 newS2 += floorAdd4
             }
