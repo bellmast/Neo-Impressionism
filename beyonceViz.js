@@ -84,12 +84,16 @@ function drawCanvas() {
                 floorAdd4 = 25 - newS2
                 newS2 += floorAdd4
             }
+            compH = HueShift(newH, newS)
+            compGlow = new HSLColour(compH, newS, newL)
             filler = new HSLColour(newH, newS, newL)
             filler2 = new HSLColour(newH2, newS2, newL2)
             rgb = filler.getRGB()
             rgb2 = filler2.getRGB()
+            rgbComp = compGlow.getRGB()
             filler = "rgb("+rgb.r+", "+rgb.g+", "+rgb.b+")"
             filler2 = "rgb("+rgb2.r+", "+rgb2.g+", "+rgb2.b+")"
+            fillerComp = "rgb("+rgbComp.r+", "+rgbComp.g+", "+rgbComp.b+")"
             fillerP = "rgb("+avgRed+", "+avgGreen+", "+avgBlue+")"
             fillerRed = "rgb("+avgRed+", "+0+", "+0+")"
             fillerGreen = "rgb("+0+", "+avgGreen+", "+0+")"
@@ -101,7 +105,8 @@ function drawCanvas() {
             paper3.rect(i, h, 6, 12).attr({fill:filler, stroke:"none"})
             paper4.rect(i, h, 6, 12).attr({fill:filler2, stroke:"none"})
             paper5.circle(i+6, h+6, 3).attr({fill:filler, stroke:"none"})
-            paper5.circle(i+6, h+12, 3).attr({fill:filler, stroke:"none"})
+            paper5.circle(i+6, h+12, 3).attr({fill:fillerComp, stroke:"none"})
+
 
             //
             widthTracker += 6
@@ -112,4 +117,8 @@ function drawCanvas() {
     heightTracker += 12
     heightMod = Math.floor(Math.random()*8)+4
     }
+}
+
+function HueShift(h,s) { 
+    h+=s; while (h>=360.0) h-=360.0; while (h<0.0) h+=360.0; return h; 
 }
