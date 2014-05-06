@@ -17,8 +17,9 @@ function runProgram() {
         
 
         paper1 = new Raphael(canvasWidth+10, 7, canvasWidth, canvasHeight);
-        paper2 = new Raphael(canvasWidth+10+canvasWidth+3, 7, canvasWidth, canvasHeight)
+        paper2 = new Raphael(canvasWidth+10+canvasWidth+2, 7, canvasWidth, canvasHeight)
         paper3 = new Raphael(5, canvasHeight+10, canvasWidth, canvasHeight);
+        paper4 = new Raphael(5+canvasWidth+2, canvasHeight+10, canvasWidth, canvasHeight)
         {drawCanvas()};       
     }
     
@@ -75,9 +76,9 @@ function drawCanvas() {
             rgb = filler.getRGB()
             filler = "rgb("+rgb.r+", "+rgb.g+", "+rgb.b+")"
             fillerP = "rgb("+avgRed+", "+avgGreen+", "+avgBlue+")"
-            fillerRed = "rgba("+avgRed+", "+0+", "+0+", "+avgAlpha+")"
-            fillerGreen = "rgba("+0+", "+avgGreen+", "+0+", "+avgAlpha+")"
-            fillerBlue = "rgba("+0+", "+0+", "+avgBlue+", "+avgAlpha+")"
+            fillerRed = "rgb("+avgRed+", "+0+", "+0+")"
+            fillerGreen = "rgb("+0+", "+avgGreen+", "+0+")"
+            fillerBlue = "rgb("+0+", "+0+", "+avgBlue+")"
             paper1.rect(i, h, 6, 12).attr({fill:fillerP, stroke:"none"})
             paper2.rect(i-2, h, 2, 12).attr({fill:fillerRed, stroke:"none"})
             paper2.rect(i, h, 2, 12).attr({fill:fillerGreen, stroke:"none"})
