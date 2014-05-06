@@ -59,7 +59,9 @@ function drawCanvas() {
             
 
             hsl = filler.getHSL()
-            filler = "hsl("+hsl.h+", "+hsl.s+"%, "+hsl.l+"%)"
+            filler = new HSLColour(hsl.h, hsl.s, hsl.l)
+            rgb = filler.getRGB()
+            filler = "hsl("+rgb.r+", "+rgb.g+", "+rgb.b+")"
             fillerRed = "rgba("+avgRed+", "+0+", "+0+", "+avgAlpha+")"
             fillerGreen = "rgba("+0+", "+avgGreen+", "+0+", "+avgAlpha+")"
             fillerBlue = "rgba("+0+", "+0+", "+avgBlue+", "+avgAlpha+")"
