@@ -84,7 +84,7 @@ function drawCanvas() {
                 newS2 += floorAdd4
             }
             filler = new HSLColour(newH, newS, newL)
-            filler2 = new HSLColour(newH, newS2, newL2)
+            filler2 = new HSLColour(newH2, newS2, newL2)
             rgb = filler.getRGB()
             rgb2 = filler2.getRGB()
             filler = "rgb("+rgb.r+", "+rgb.g+", "+rgb.b+")"
