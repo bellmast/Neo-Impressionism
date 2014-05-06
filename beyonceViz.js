@@ -54,9 +54,12 @@ function drawCanvas() {
             avgGreen = greenCount/count
             avgBlue = blueCount/count
             avgAlpha = alphaCount/count
+            
+            filler = new RGBColour(avgRed, avgGreen, avgBlue)
+            
 
-            hsl = rgbToHsl(avgRed, avgGreen, avgBlue)
-            filler = "hsl("+hsl[0]+", "+hsl[1]+"%, "+hsl[2]+"%)"
+            hsl = getHSL(filler)
+            filler = "hsl("+hsl.h+", "+hsl.s+"%, "+hsl.l+"%)"
             fillerRed = "rgba("+avgRed+", "+0+", "+0+", "+avgAlpha+")"
             fillerGreen = "rgba("+0+", "+avgGreen+", "+0+", "+avgAlpha+")"
             fillerBlue = "rgba("+0+", "+0+", "+avgBlue+", "+avgAlpha+")"
@@ -75,42 +78,3 @@ function drawCanvas() {
     heightMod = Math.floor(Math.random()*8)+4
     }
 }
-
-function rgbToHsl(r, g, b){
-    var r1 = r / 255;
-    var g1 = g / 255;
-    var b1 = b / 255;
- 
-    var maxColor = Math.max(r1,g1,b1);
-    var minColor = Math.min(r1,g1,b1);
-    //Calculate L:
-    var L = (maxColor + minColor) / 2 ;
-    var S = 0;
-    var H = 0;
-    if(maxColor != minColor){
-        //Calculate S:
-        if(L < 0.5){
-            S = (maxColor - minColor) / (maxColor + minColor);
-        }else{
-            S = (maxColor - minColor) / (2.0 - maxColor - minColor);
-        }
-        //Calculate H:
-        if(r1 == maxColor){
-            H = (g1-b1) / (maxColor - minColor);
-        }else if(g1 == maxColor){
-            H = 2.0 + (b1 - r1) / (maxColor - minColor);
-        }else{
-            H = 4.0 + (r1 - g1) / (maxColor - minColor);
-        }
-    }
- 
-    L = L * 100;
-    S = S * 100;
-    H = H * 60;
-    if(H<0){
-        H += 360;
-    }
-    var result = [H, S, L];
-    return result;
-}
-
