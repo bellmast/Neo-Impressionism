@@ -56,7 +56,7 @@ function drawCanvas() {
             avgAlpha = alphaCount/count
             hsl = rgbToHsv(avgRed, avgGreen, avgBlue)
 
-            filler = "hsl("+hsl[0]+", "+hsl[1]+"%, "+hsl[2]+"%)"
+            filler = "hsl("+avgRed+", "+avgGreen+", "+avgBlue+")"
             fillerRed = "rgba("+avgRed+", "+0+", "+0+", "+avgAlpha+")"
             fillerGreen = "rgba("+0+", "+avgGreen+", "+0+", "+avgAlpha+")"
             fillerBlue = "rgba("+0+", "+0+", "+avgBlue+", "+avgAlpha+")"
