@@ -16,7 +16,9 @@ function runProgram() {
 
         
 
-        paper = new Raphael(10, canvasHeight+10, canvasWidth, canvasHeight);  
+        paper1 = new Raphael(canvasWidth+10, 10, canvasWidth, canvasHeight);
+        paper2 = new Raphael(canvasWidth+10+canvasWidth+10, 10, canvaswidth, canvasHeight)
+        paper3 = new Raphael(10, canvasHeight+10, canvasWidth, canvasHeight);
         {drawCanvas()};       
     }
     
@@ -79,7 +81,7 @@ function drawCanvas() {
             //brushSet.push(paper.rect(i-2, h, 2, 12).attr({fill:fillerRed, stroke:"none"}))
             //brushSet.push(paper.rect(i, h, 2, 12).attr({fill:fillerGreen, stroke:"none"}))
             //brushSet.push(paper.rect(i+2, h, 2, 12).attr({fill:fillerBlue, stroke:"none"}))
-            brushSet.push(paper.rect(i, h, 6, 12).attr({fill:filler, stroke:"none"}))
+            brushSet.push(paper3.rect(i, h, 6, 12).attr({fill:filler, stroke:"none"}))
 
             //
             widthTracker += 6
