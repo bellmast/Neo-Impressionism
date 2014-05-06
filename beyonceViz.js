@@ -79,14 +79,17 @@ function drawCanvas() {
             fillerRed = "rgb("+avgRed+", "+0+", "+0+")"
             fillerGreen = "rgb("+0+", "+avgGreen+", "+0+")"
             fillerBlue = "rgb("+0+", "+0+", "+avgBlue+")"
+            fillerRed2 = "rgb("+rgb.r+", "+0+", "+0+")"
+            fillerGreen2 = "rgb("+0+", "+rgb.g+", "+0+")"
+            fillerBlue2 = "rgb("+0+", "+0+", "+rgb.b+")"
             paper1.rect(i, h, 6, 12).attr({fill:fillerP, stroke:"none"})
             paper2.rect(i-2, h, 2, 12).attr({fill:fillerRed, stroke:"none"})
             paper2.rect(i, h, 2, 12).attr({fill:fillerGreen, stroke:"none"})
             paper2.rect(i+2, h, 2, 12).attr({fill:fillerBlue, stroke:"none"})
             paper3.rect(i, h, 6, 12).attr({fill:filler, stroke:"none"})
-            paper4.rect(i-2, h, 2, 12).attr({fill:rgb.r, stroke:"none"})
-            paper4.rect(i, h, 2, 12).attr({fill:rgb.g, stroke:"none"})
-            paper4.rect(i+2, h, 2, 12).attr({fill:rgb.b, stroke:"none"})
+            paper4.rect(i-2, h, 2, 12).attr({fill:fillerRed2, stroke:"none"})
+            paper4.rect(i, h, 2, 12).attr({fill:fillerGreen2, stroke:"none"})
+            paper4.rect(i+2, h, 2, 12).attr({fill:fillerBlue2, stroke:"none"})
 
             //
             widthTracker += 6
