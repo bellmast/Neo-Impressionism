@@ -74,12 +74,14 @@ function drawCanvas() {
             filler = new HSLColour(newH, newS, newL)
             rgb = filler.getRGB()
             filler = "rgb("+rgb.r+", "+rgb.g+", "+rgb.b+")"
+            fillerP = "rgb("+avgRed+", "+avgGreen+", "+avgBlue+")"
             fillerRed = "rgba("+avgRed+", "+0+", "+0+", "+avgAlpha+")"
             fillerGreen = "rgba("+0+", "+avgGreen+", "+0+", "+avgAlpha+")"
             fillerBlue = "rgba("+0+", "+0+", "+avgBlue+", "+avgAlpha+")"
-            //paper.rect(i-2, h, 2, 12).attr({fill:fillerRed, stroke:"none"})
-            //paper.rect(i, h, 2, 12).attr({fill:fillerGreen, stroke:"none"})
-            //paper.rect(i+2, h, 2, 12).attr({fill:fillerBlue, stroke:"none"})
+            paper1.rect(i, h, 6, 12).attr({fill:fillerP, stroke:"none"})
+            paper2.rect(i-2, h, 2, 12).attr({fill:fillerRed, stroke:"none"})
+            paper2.rect(i, h, 2, 12).attr({fill:fillerGreen, stroke:"none"})
+            paper2.rect(i+2, h, 2, 12).attr({fill:fillerBlue, stroke:"none"})
             paper3.rect(i, h, 6, 12).attr({fill:filler, stroke:"none"})
 
             //
