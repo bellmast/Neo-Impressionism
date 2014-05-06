@@ -54,7 +54,7 @@ function drawCanvas() {
             avgGreen = greenCount/count
             avgBlue = blueCount/count
             avgAlpha = alphaCount/count
-            hsl = rgbToHsl(avgRed, avgGreen, avgBlue)
+            hsl = rgbToHsv(avgRed, avgGreen, avgBlue)
 
             filler = "hsl("+hsl[0]+", "+hsl[1]+"%, "+hsl[2]+"%)"
             fillerRed = "rgba("+avgRed+", "+0+", "+0+", "+avgAlpha+")"
@@ -76,23 +76,30 @@ function drawCanvas() {
     }
 }
 
-function rgbToHsl(r, g, b){
-    r /= 255, g /= 255, b /= 255;
-    var max = Math.max(r, g, b), min = Math.min(r, g, b);
-    var h, s, l = (max + min) / 2;
+function rgbToHsv(r, g, b) {
+    var
+        min = Math.min(r, g, b),
+        max = Math.max(r, g, b),
+        delta = max - min,
+        h, s, v = max;
 
-    if(max == min){
-        h = s = 0; // achromatic
-    }else{
-        var d = max - min;
-        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-        switch(max){
-            case r: h = (g - b) / d + (g < b ? 6 : 0); break;
-            case g: h = (b - r) / d + 2; break;
-            case b: h = (r - g) / d + 4; break;
-        }
-        h /= 6;
+    v = Math.floor(max / 255 * 100);
+    if ( max != 0 )
+        s = Math.floor(delta / max * 100);
+    else {
+        // black
+        return [0, 0, 0];
     }
 
-    return [Math.floor(h * 360), Math.floor(s * 100), Math.floor(l * 100)];
+    if( r == max )
+        h = ( g - b ) / delta;         // between yellow & magenta
+    else if( g == max )
+        h = 2 + ( b - r ) / delta;     // between cyan & yellow
+    else
+        h = 4 + ( r - g ) / delta;     // between magenta & cyan
+
+    h = Math.floor(h * 60);            // degrees
+    if( h < 0 ) h += 360;
+
+    return [h, s, v];
 }
