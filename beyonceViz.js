@@ -72,24 +72,30 @@ function drawCanvas() {
                 floorAdd2 = 75 - newS
                 newS += floorAdd2
             }
+            if (newL < 25) {
+                floorAdd3 = 25 - newL
+                newL2 += floorAdd3
+            }
+            if (newS < 25) {
+                floorAdd4 = 25 - newS
+                newS2 += floorAdd4
+            }
             filler = new HSLColour(newH, newS, newL)
+            filler2 = new HSLColour(newH, newS2, newL2)
             rgb = filler.getRGB()
+            rgb2 = filler2.getRGB()
             filler = "rgb("+rgb.r+", "+rgb.g+", "+rgb.b+")"
+            filler2 = "rgb("+rgb2.r+", "+rgb2.g+", "+rgb2.b+")"
             fillerP = "rgb("+avgRed+", "+avgGreen+", "+avgBlue+")"
             fillerRed = "rgb("+avgRed+", "+0+", "+0+")"
             fillerGreen = "rgb("+0+", "+avgGreen+", "+0+")"
             fillerBlue = "rgb("+0+", "+0+", "+avgBlue+")"
-            fillerRed2 = "rgb("+rgb.r+", "+0+", "+0+")"
-            fillerGreen2 = "rgb("+0+", "+rgb.g+", "+0+")"
-            fillerBlue2 = "rgb("+0+", "+0+", "+rgb.b+")"
             paper1.rect(i, h, 6, 12).attr({fill:fillerP, stroke:"none"})
             paper2.rect(i-2, h, 2, 12).attr({fill:fillerRed, stroke:"none"})
             paper2.rect(i, h, 2, 12).attr({fill:fillerGreen, stroke:"none"})
             paper2.rect(i+2, h, 2, 12).attr({fill:fillerBlue, stroke:"none"})
             paper3.rect(i, h, 6, 12).attr({fill:filler, stroke:"none"})
-            paper4.rect(i-2, h, 2, 12).attr({fill:fillerRed2, stroke:"none"})
-            paper4.rect(i, h, 2, 12).attr({fill:fillerGreen2, stroke:"none"})
-            paper4.rect(i+2, h, 2, 12).attr({fill:fillerBlue2, stroke:"none"})
+            paper4.rect(i, h, 6, 12).attr({fill:filler2, stroke:"none"})
 
             //
             widthTracker += 6
